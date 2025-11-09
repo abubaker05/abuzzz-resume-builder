@@ -1,0 +1,34 @@
+/* background visual (subtle, blurred) */
+.bg-visual {
+  background: linear-gradient(135deg, rgba(6,182,212,0.12), rgba(79,70,229,0.08));
+  filter: blur(30px) saturate(90%);
+  transform: scale(1.2);
+  z-index: -1;
+}
+
+/* general dark input styles */
+.input-dark {
+  width: 100%;
+  padding: 8px 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #fff;
+  border-radius: 6px;
+  outline: none;
+}
+
+/* Preview wrapper variants */
+.preview-wrap { border-radius: 10px; }
+.preview-single { font-family: Inter, Arial, sans-serif; }
+
+/* responsive tweaks */
+@media (max-width: 1024px) {
+  .dashboard-root .flex { flex-direction: column; }
+}
+
+/* print helper: ensure single-layout prints as A4 scaling */
+@media print {
+  body { -webkit-print-color-adjust: exact; }
+  .preview-bi, .preview-single { box-shadow: none !important; border-radius: 0 !important; }
+  .preview-single { max-width: 800px; margin: 0 auto; }
+}
